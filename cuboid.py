@@ -44,8 +44,6 @@ class Cuboid:
             else:
                 tmp = tmp/(tmp[3][0])
         
-            
-
             ppn.append(tmp)
             tmp[0][0] = (tmp[0][0] * canvas_width/2) + canvas_width/2
             tmp[1][0] = (-tmp[1][0] * canvas_height/2) + canvas_height/2
@@ -53,18 +51,54 @@ class Cuboid:
         self.ppn = ppn
         self.pp = pp
         
-        canvas.create_line(pp[0][0][0], pp[0][1][0], pp[1][0][0], pp[1][1][0], fill=color, width=line_width)
-        canvas.create_line(pp[0][0][0], pp[0][1][0], pp[2][0][0], pp[2][1][0], fill=color, width=line_width)
-        canvas.create_line(pp[3][0][0], pp[3][1][0], pp[1][0][0], pp[1][1][0], fill=color, width=line_width)
-        canvas.create_line(pp[3][0][0], pp[3][1][0], pp[2][0][0], pp[2][1][0], fill=color, width=line_width)
-        canvas.create_line(pp[0][0][0], pp[0][1][0], pp[4][0][0], pp[4][1][0], fill=color, width=line_width)
-        canvas.create_line(pp[1][0][0], pp[1][1][0], pp[5][0][0], pp[5][1][0], fill=color, width=line_width)
-        canvas.create_line(pp[2][0][0], pp[2][1][0], pp[6][0][0], pp[6][1][0], fill=color, width=line_width)
-        canvas.create_line(pp[3][0][0], pp[3][1][0], pp[7][0][0], pp[7][1][0], fill=color, width=line_width)
-        canvas.create_line(pp[4][0][0], pp[4][1][0], pp[5][0][0], pp[5][1][0], fill=color, width=line_width)
-        canvas.create_line(pp[4][0][0], pp[4][1][0], pp[6][0][0], pp[6][1][0], fill=color, width=line_width)
-        canvas.create_line(pp[7][0][0], pp[7][1][0], pp[5][0][0], pp[5][1][0], fill=color, width=line_width)
-        canvas.create_line(pp[7][0][0], pp[7][1][0], pp[6][0][0], pp[6][1][0], fill=color, width=line_width)
+        
+        #if (ppn[0][2][0] > 0 and ppn[0][2][0] < 1) or (ppn[1][2][0] > 0 and ppn[1][2][0] < 1) :
+        #    canvas.create_line(pp[0][0][0], pp[0][1][0], pp[1][0][0], pp[1][1][0], fill=color, width=line_width)
+        #if (ppn[0][2][0] > 0 and ppn[0][2][0] < 1) or (ppn[2][2][0] > 0 and ppn[2][2][0] < 1) :
+        #    canvas.create_line(pp[0][0][0], pp[0][1][0], pp[2][0][0], pp[2][1][0], fill=color, width=line_width)
+        #if (ppn[3][2][0] > 0 and ppn[3][2][0] < 1) or (ppn[1][2][0] > 0 and ppn[1][2][0] < 1) :
+        #    canvas.create_line(pp[3][0][0], pp[3][1][0], pp[1][0][0], pp[1][1][0], fill=color, width=line_width)
+        #if (ppn[3][2][0] > 0 and ppn[3][2][0] < 1) or (ppn[2][2][0] > 0 and ppn[2][2][0] < 1) :
+        #    canvas.create_line(pp[3][0][0], pp[3][1][0], pp[2][0][0], pp[2][1][0], fill=color, width=line_width)
+        #if (ppn[0][2][0] > 0 and ppn[0][2][0] < 1) or (ppn[4][2][0] > 0 and ppn[4][2][0] < 1) :
+        #    canvas.create_line(pp[0][0][0], pp[0][1][0], pp[4][0][0], pp[4][1][0], fill=color, width=line_width)
+        #if (ppn[1][2][0] > 0 and ppn[1][2][0] < 1) or (ppn[5][2][0] > 0 and ppn[5][2][0] < 1) :
+        #    canvas.create_line(pp[1][0][0], pp[1][1][0], pp[5][0][0], pp[5][1][0], fill=color, width=line_width)
+        #if (ppn[2][2][0] > 0 and ppn[2][2][0] < 1) or (ppn[6][2][0] > 0 and ppn[6][2][0] < 1) :
+        #    canvas.create_line(pp[2][0][0], pp[2][1][0], pp[6][0][0], pp[6][1][0], fill=color, width=line_width)
+        #if (ppn[3][2][0] > 0 and ppn[3][2][0] < 1) or (ppn[7][2][0] > 0 and ppn[7][2][0] < 1) :
+        #    canvas.create_line(pp[3][0][0], pp[3][1][0], pp[7][0][0], pp[7][1][0], fill=color, width=line_width)
+        #if (ppn[4][2][0] > 0 and ppn[4][2][0] < 1) or (ppn[5][2][0] > 0 and ppn[5][2][0] < 1) :
+        #    canvas.create_line(pp[4][0][0], pp[4][1][0], pp[5][0][0], pp[5][1][0], fill=color, width=line_width)
+        #if (ppn[4][2][0] > 0 and ppn[4][2][0] < 1) or (ppn[6][2][0] > 0 and ppn[6][2][0] < 1) :
+        #    canvas.create_line(pp[4][0][0], pp[4][1][0], pp[6][0][0], pp[6][1][0], fill=color, width=line_width)
+        #if (ppn[7][2][0] > 0 and ppn[7][2][0] < 1) or (ppn[5][2][0] > 0 and ppn[5][2][0] < 1) :
+        #    canvas.create_line(pp[7][0][0], pp[7][1][0], pp[5][0][0], pp[5][1][0], fill=color, width=line_width)
+        #if (ppn[7][2][0] > 0 and ppn[7][2][0] < 1) or (ppn[6][2][0] > 0 and ppn[6][2][0] < 1) :
+        #    canvas.create_line(pp[7][0][0], pp[7][1][0], pp[6][0][0], pp[6][1][0], fill=color, width=line_width)
+        self.drawLine(pp[0][0][0], pp[0][1][0], pp[1][0][0], pp[1][1][0], ppn[0][2][0], ppn[1][2][0], canvas, color, line_width)
+        self.drawLine(pp[0][0][0], pp[0][1][0], pp[2][0][0], pp[2][1][0], ppn[0][2][0], ppn[2][2][0], canvas, color, line_width)
+        self.drawLine(pp[3][0][0], pp[3][1][0], pp[1][0][0], pp[1][1][0], ppn[3][2][0], ppn[1][2][0], canvas, color, line_width)
+        self.drawLine(pp[3][0][0], pp[3][1][0], pp[2][0][0], pp[2][1][0], ppn[3][2][0], ppn[2][2][0], canvas, color, line_width)
+        self.drawLine(pp[0][0][0], pp[0][1][0], pp[4][0][0], pp[4][1][0], ppn[0][2][0], ppn[4][2][0], canvas, color, line_width)
+        self.drawLine(pp[1][0][0], pp[1][1][0], pp[5][0][0], pp[5][1][0], ppn[1][2][0], ppn[5][2][0], canvas, color, line_width)
+        self.drawLine(pp[2][0][0], pp[2][1][0], pp[6][0][0], pp[6][1][0], ppn[2][2][0], ppn[6][2][0], canvas, color, line_width)
+        self.drawLine(pp[3][0][0], pp[3][1][0], pp[7][0][0], pp[7][1][0], ppn[3][2][0], ppn[7][2][0], canvas, color, line_width)
+        self.drawLine(pp[4][0][0], pp[4][1][0], pp[5][0][0], pp[5][1][0], ppn[4][2][0], ppn[5][2][0], canvas, color, line_width)
+        self.drawLine(pp[4][0][0], pp[4][1][0], pp[6][0][0], pp[6][1][0], ppn[4][2][0], ppn[6][2][0], canvas, color, line_width)
+        self.drawLine(pp[7][0][0], pp[7][1][0], pp[5][0][0], pp[5][1][0], ppn[7][2][0], ppn[5][2][0], canvas, color, line_width)
+        self.drawLine(pp[7][0][0], pp[7][1][0], pp[6][0][0], pp[6][1][0], ppn[7][2][0], ppn[6][2][0], canvas, color, line_width)
+        
+        
+    def drawLine(self, x1, y1, x2, y2, zn1, zn2, canvas:Canvas, color='black', line_width=1):
+        if (zn1 > 0 and zn1 < 1) and (zn2 > 0 and zn2 < 1):
+            canvas.create_line(x1, y1, x2, y2, fill=color, width=line_width)
+        #elif(zn1 > 0 and zn1 < 1) and (zn2 < 0):
+        #    canvas.create_line(x1, y1, -x2, -y2, fill=color, width=line_width)
+        #elif (zn1 < 0) and (zn2 > 0 and zn2 < 1):
+        #    canvas.create_line(-x1, -y1, x2, y2, fill=color, width=line_width)
+
+        
 
 
     def applyTransformation(self, transformation:np.ndarray):

@@ -16,7 +16,7 @@ class Scene():
         self.cam_height = canvas_height
         self.cam_width = canvas_width
         self.near_plane_distance = 1
-        self.far_plane_distance = 200
+        self.far_plane_distance = 1000
         
         self.updateProjectionMatrix()
         
@@ -32,6 +32,7 @@ class Scene():
     def render(self):
         for c in self.cuboids:
             c.projectAndDraw(self.projection_matrix, self.canvas, self.cam_height, self.cam_width)
+        self.canvas.create_text(35,10,text='fov: ' + str(round((self.fov * (360/(2*pi))), 2)))
     
     def refresh(self):
         self.canvas.delete("all")

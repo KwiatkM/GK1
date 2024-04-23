@@ -8,7 +8,7 @@ HEIGHT = 800
 window  = tk.Tk()
 window.geometry("" + str(WIDTH) + "x" + str(HEIGHT))
 
-canvas = tk.Canvas(window, bg='grey', width=WIDTH, height=HEIGHT)
+canvas = tk.Canvas(window, bg='grey75', width=WIDTH, height=HEIGHT)
 canvas.pack()
 
 c1 = c.Cuboid(10, -20, 50, 20,20,20)
