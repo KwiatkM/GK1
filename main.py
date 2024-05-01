@@ -97,5 +97,4 @@ window.bind('r', fovUp)
 window.bind('f', fovDown)
 
 
-
 window.mainloop()
